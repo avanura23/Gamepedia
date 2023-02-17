@@ -61,8 +61,10 @@ export default function GameList({ navigation }) {
           data={categoryGames}
           renderItem={({ item }) => (
             <TouchableOpacity>
-              <Text>{item.title}</Text>
-              <Text>{item.short_description}</Text>
+              <View style={globalStyles.cardItem}>
+                <Text>{item.title}</Text>
+                <Text>{item.short_description}</Text>
+              </View>
             </TouchableOpacity>
           )}
         />

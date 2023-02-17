@@ -21,4 +21,11 @@ export const globalStyles = StyleSheet.create({
   categoryItem: {
     margin: 10,
   },
+  cardItem: {
+    borderWidth: 1,
+    borderColor: "#ddd",
+    margin: 5,
+    borderRadius: 20,
+    padding: 10,
+  },
 });
