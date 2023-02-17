@@ -20,6 +20,10 @@ export const globalStyles = StyleSheet.create({
   },
   categoryItem: {
     margin: 10,
+    borderWidth: 1,
+    borderColor: "#ddd",
+    borderRadius: 20,
+    padding: 8,
   },
   cardItem: {
     borderWidth: 1,

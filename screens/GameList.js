@@ -51,7 +51,9 @@ export default function GameList({ navigation }) {
           data={category}
           renderItem={({ item }) => (
             <TouchableOpacity onPress={() => pressCategory(item.name)}>
+              {/* <View > */}
               <Text style={globalStyles.categoryItem}>{item.name}</Text>
+              {/* </View> */}
             </TouchableOpacity>
           )}
         />
