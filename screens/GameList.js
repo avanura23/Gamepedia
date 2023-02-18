@@ -1,4 +1,6 @@
 import React from "react";
+import GameItem from "./GameItem";
+import Navigator from "../routes/homeStack";
 import {
   Dimensions,
   StyleSheet,
@@ -12,6 +14,7 @@ import {
 } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { globalStyles } from "../styles/global";
+import { FontAwesome } from "@expo/vector-icons";
 
 export default function GameList({ navigation }) {
   const pressHandler = () => {
