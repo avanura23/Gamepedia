@@ -6,30 +6,36 @@ export const globalStyles = StyleSheet.create({
     fontWeight: "bold",
     color: "#333",
   },
-  paragraph: {
-    marginVertical: 8,
-    lineHeight: 20,
-  },
   container: {
     flex: 1,
-    padding: 20,
+    backgroundColor: "#fff",
   },
-  filterOptions: {
+  categoryContainer: {
+    marginTop: 15,
+    marginLeft: 10,
+  },
+  gamesContainer: {
     flex: 1,
-    backgroundColor: "#ddd",
+    marginVertical: 15,
+    marginHorizontal: 5,
   },
   categoryItem: {
-    margin: 10,
-    borderWidth: 1,
-    borderColor: "#ddd",
-    borderRadius: 20,
-    padding: 8,
+    marginRight: 10,
+    borderRadius: 30,
+    padding: 15,
+    backgroundColor: "#F5F5F5",
+  },
+  currentCategoryItem: {
+    backgroundColor: "#F7E5E7",
+    fontWeight: "bold",
   },
   cardItem: {
+    width: 150,
+    height: 150,
+    flex: 1,
     borderWidth: 1,
     borderColor: "#ddd",
     margin: 5,
     borderRadius: 20,
-    padding: 10,
   },
 });
