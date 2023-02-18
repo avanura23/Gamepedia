@@ -14,7 +14,7 @@ import {
 } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { globalStyles } from "../styles/global";
-import { FontAwesome } from "@expo/vector-icons";
+// import { FontAwesome } from "@expo/vector-icons";
 
 export default function GameList({ navigation }) {
   const pressHandler = () => {
@@ -51,6 +51,14 @@ export default function GameList({ navigation }) {
 
     setCurrCategory(categoryName);
     setCategoryGames(resJson);
+  }
+
+  async function pressGame(gameId) {
+    const gameUrl = "https://www.freetogame.com/api/game?id=" + gameId;
+    const gameResponse = await fetch(gameUrl);
+    const resJson = await gameResponse.json();
+
+    navigation.push("GameItem", { props: resJson });
   }
 
   const screenWidth = Dimensions.get("window").width;
@@ -95,7 +103,7 @@ export default function GameList({ navigation }) {
             numColumns={2}
             data={categoryGames}
             renderItem={({ item }) => (
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => pressGame(item.id)}>
                 <ImageBackground
                   style={{
                     justifyContent: "flex-end",
