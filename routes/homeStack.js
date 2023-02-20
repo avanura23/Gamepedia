@@ -5,14 +5,23 @@ import GameList from "../screens/GameList";
 import GameItem from "../screens/GameItem";
 
 const screens = {
-  Home: {
-    screen: Home,
-  },
+  // Home: {
+  //   screen: Home,
+  //   navigationOptions: {
+  //     headerShown: false,
+  //   },
+  // },
   GameList: {
     screen: GameList,
+    navigationOptions: {
+      headerShown: false,
+    },
   },
   GameItem: {
     screen: GameItem,
+    navigationOptions: {
+      headerShown: false,
+    },
   },
 };
 

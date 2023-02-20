@@ -83,6 +83,7 @@ export default function GameList({ navigation }) {
       <View style={globalStyles.categoryContainer}>
         <FlatList
           horizontal
+          showsHorizontalScrollIndicator={false}
           data={category}
           renderItem={({ item }) => (
             <TouchableOpacity onPress={() => pressCategory(item.name)}>

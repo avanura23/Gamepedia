@@ -9,6 +9,7 @@ export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    paddingTop: 40,
   },
   categoryContainer: {
     marginTop: 15,
