@@ -3,18 +3,15 @@ import GameItem from "./GameItem";
 import Navigator from "../routes/homeStack";
 import {
   Dimensions,
-  StyleSheet,
   View,
   Text,
-  Image,
-  Button,
   FlatList,
   TouchableOpacity,
   ImageBackground,
+  TextInput,
 } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { globalStyles } from "../styles/global";
-// import { FontAwesome } from "@expo/vector-icons";
 
 export default function GameList({ navigation }) {
   const pressHandler = () => {
@@ -40,6 +37,8 @@ export default function GameList({ navigation }) {
   const [currCategory, setCurrCategory] = React.useState("MMORPG");
   const [categoryGames, setCategoryGames] = React.useState([]);
 
+  const [gameList, setGameList] = React.useState([]);
+
   React.useEffect(() => {
     pressCategory(currCategory);
   }, []);
@@ -51,6 +50,7 @@ export default function GameList({ navigation }) {
 
     setCurrCategory(categoryName);
     setCategoryGames(resJson);
+    setGameList(resJson);
   }
 
   async function pressGame(gameId) {
@@ -62,10 +62,24 @@ export default function GameList({ navigation }) {
   }
 
   const screenWidth = Dimensions.get("window").width;
-  const screenHeight = Dimensions.get("window").height;
 
   return (
     <View style={globalStyles.container}>
+      <TextInput
+        style={{
+          margin: 10,
+          padding: 15,
+          borderRadius: 20,
+          fontSize: 16,
+          backgroundColor: "#F5F5F5",
+        }}
+        onChangeText={(text) => {
+          setCategoryGames(
+            gameList.filter((item) => item.title.includes(text))
+          );
+        }}
+        placeholder="Search"
+      />
       <View style={globalStyles.categoryContainer}>
         <FlatList
           horizontal
