@@ -14,10 +14,6 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { globalStyles } from "../styles/global";
 
 export default function GameList({ navigation }) {
-  const pressHandler = () => {
-    navigation.goBack();
-  };
-
   const [category, setCategory] = React.useState([
     { name: "MMORPG", key: "1" },
     { name: "Shooter", key: "2" },
@@ -65,6 +61,16 @@ export default function GameList({ navigation }) {
 
   return (
     <View style={globalStyles.container}>
+      <Text
+        style={{
+          marginLeft: 15,
+          marginVertical: 10,
+          fontSize: 22,
+          fontWeight: "bold",
+        }}
+      >
+        Gamepedia
+      </Text>
       <TextInput
         style={{
           margin: 10,

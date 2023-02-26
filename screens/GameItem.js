@@ -38,6 +38,14 @@ export default function GameItem({ navigation }) {
         flex: 1,
       }}
     >
+      <TouchableOpacity
+        style={{ zIndex: 10, position: "absolute", left: "5%", top: "5%" }}
+        onPress={() => {
+          navigation.goBack();
+        }}
+      >
+        <FontAwesome name="arrow-circle-o-left" size={35} color="#fff" />
+      </TouchableOpacity>
       <ImageBackground
         source={{ uri: thumbnail }}
         style={{
