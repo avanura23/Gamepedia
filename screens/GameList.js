@@ -1,6 +1,4 @@
 import React from "react";
-import GameItem from "./GameItem";
-import Navigator from "../routes/homeStack";
 import {
   Dimensions,
   View,
